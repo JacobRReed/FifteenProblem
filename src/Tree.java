@@ -7,13 +7,17 @@ public class Tree {
     private ArrayList<Node> myVisited;
     private Integer myMaxFringe;
     private Integer myDepth;
+    private Integer myNodesCreated;
+    private Integer myNumExpanded;
     
     //Priority expand order Right->Down->Left->Up
     public Tree(final Node theRoot) {
     	myRoot = theRoot;
     	myMaxFringe = 0;
-    	myDepth = 1;
+    	myDepth = 0;
     	myVisited = new ArrayList<Node>();
+    	myNodesCreated = 0;
+    	myNumExpanded = 0;
     }
     
     public ArrayList<Node> getVisited() {
@@ -30,5 +34,13 @@ public class Tree {
     
     public Integer getDepth() {
     	return myDepth;
+    }
+    
+    public Integer getCreated() {
+    	return myNodesCreated;
+    }
+    
+    public Integer getExpanded() {
+    	return myNumExpanded;
     }
 }
